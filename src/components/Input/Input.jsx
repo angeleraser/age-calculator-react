@@ -22,7 +22,10 @@ export const Input = ({
     if (value.length - 1 === Number(maxLength)) return;
 
     onChange?.(value);
+    handleValidity(value);
+  };
 
+  const handleValidity = (value) => {
     if (!value) return setShowError("This field is required");
     if (validation?.(value)) return setShowError(errorMessage);
 
@@ -44,14 +47,15 @@ export const Input = ({
         className="input-field-input"
         id={id}
         name={name}
+        onBlur={() => handleValidity(value)}
         onChange={handleOnChange}
         placeholder={placeholder}
+        required={required}
         type={type}
         value={value}
-        required={required}
       />
 
-      <p className="input-field-error-msg">{error && error}</p>
+      <p className="input-field-error-msg">{error}</p>
     </label>
   );
 };

@@ -11,8 +11,11 @@
 
 .input-field-label,
 .input-field-error-msg {
-  font-size: 12px;
-  min-height: 12px;
+  font-size: 12.5px;
+}
+
+.input-field-error-msg {
+  min-height: 13px;
 }
 
 .input-field-input {
@@ -20,12 +23,12 @@
   border: none;
   outline: 1px solid var(--lightgray);
   padding: 16px;
-  font-size: 1em;
+  font-size: 16px;
   border-radius: 6px;
   margin: 10px 0;
   font-weight: 800;
   color: var(--secondary);
-  transition: 0.3s all;
+  transition: outline .3s;
 }
 
 .input-field-input::placeholder,
@@ -61,19 +64,9 @@
   margin: 0;
 }
 
-.input-field-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
 @media screen and (min-width: 1024px) {
   .input-field-input {
     padding: 22px;
     font-size: 24px;
-  }
-
-  .input-field-label,
-  .input-field-error-msg {
-    font-size: 12.5px;
-    min-height: 12.5px;
   }
 }
