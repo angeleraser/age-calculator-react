@@ -1,23 +1,27 @@
+import React from "react";
 import "./assets/css/index.css";
-import { ArrowIcon } from "./components/ArrowIcon/ArrowIcon";
-import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
-import { Heading } from "./components/Heading/Heading";
+import { Input } from "./components/Input/Input";
 
 function App() {
+  const [inputValue, setInputValue] = React.useState("");
+
   return (
     <Card maxWidth="840px">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio error
-      asperiores ab illo, rem enim perspiciatis molestiae numquam harum
-      voluptatibus, quisquam eveniet id incidunt beatae? Asperiores nam sequi
-      optio doloribus!
-      <br />
-      <Button color="primary" rounded>
-        <ArrowIcon />
-      </Button>
-      <Heading value="12" label="years" />
-      <Heading label="months" />
-      <Heading value="12" label="days" />
+      <Input
+        errorMessage="Must be a valid day"
+        id="day-input"
+        label="Day"
+        maxLength="2"
+        onChange={setInputValue}
+        placeholder="DD"
+        validation={(value) => {
+          const num = Number(value);
+          return Number.isNaN(num) || num > 31 || num <= 0;
+        }}
+        value={inputValue}
+        type="number"
+      />
     </Card>
   );
 }

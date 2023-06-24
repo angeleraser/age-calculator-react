@@ -1,0 +1,79 @@
+.input-field {
+  display: inline-block;
+  width: auto;
+}
+
+.input-field-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.input-field-label,
+.input-field-error-msg {
+  font-size: 12px;
+  min-height: 12px;
+}
+
+.input-field-input {
+  font-family: var(--font-poppins);
+  border: none;
+  outline: 1px solid var(--lightgray);
+  padding: 16px;
+  font-size: 1em;
+  border-radius: 6px;
+  margin: 10px 0;
+  font-weight: 800;
+  color: var(--secondary);
+  transition: 0.3s all;
+}
+
+.input-field-input::placeholder,
+.input-field-label {
+  color: var(--darkgray);
+}
+
+.input-field-input:hover {
+  outline-color: var(--gray);
+}
+
+.input-field-invalid .input-field-input {
+  outline-color: var(--error);
+}
+
+.input-field-invalid .input-field-error-msg {
+  visibility: visible;
+}
+
+.input-field-error-msg {
+  visibility: hidden;
+  font-style: italic;
+}
+
+.input-field-error-msg,
+.input-field-invalid .input-field-label {
+  color: var(--error);
+}
+
+.input-field-input::-webkit-outer-spin-button,
+.input-field-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-field-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media screen and (min-width: 1024px) {
+  .input-field-input {
+    padding: 22px;
+    font-size: 24px;
+  }
+
+  .input-field-label,
+  .input-field-error-msg {
+    font-size: 12.5px;
+    min-height: 12.5px;
+  }
+}
