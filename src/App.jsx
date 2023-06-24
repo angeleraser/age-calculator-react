@@ -1,12 +1,15 @@
 import "./assets/css/index.css";
+import { Card } from "./components/Card/Card";
 
 function App() {
   return (
     <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum atque
-      voluptates assumenda optio. Assumenda distinctio sequi nam sed. Qui
-      blanditiis velit quasi? Nemo blanditiis alias cupiditate adipisci quia
-      dolores hic.
+      <Card maxWidth="840px">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio error
+        asperiores ab illo, rem enim perspiciatis molestiae numquam harum
+        voluptatibus, quisquam eveniet id incidunt beatae? Asperiores nam sequi
+        optio doloribus!
+      </Card>
     </div>
   );
 }
