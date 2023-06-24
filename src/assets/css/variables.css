@@ -1,0 +1,17 @@
+:root {
+  --primary: hsl(259, 100%, 65%);
+  --secondary: hsl(0, 0%, 8%);
+  --error: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --lightgray: hsl(0, 0%, 94%);
+  --gray: hsl(0, 0%, 86%);
+  --darkgray: hsl(0, 1%, 44%);
+
+  --base-font-size: 16px;
+
+  --font-poppins: "Poppins", sans-serif;
+
+  --font-weight-s: 400;
+  --font-weight-m: 400;
+  --font-weight-l: 400;
+}
