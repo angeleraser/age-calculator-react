@@ -15,7 +15,7 @@ export const Button = ({
         "button-rounded": rounded,
       })}`}
     >
-      <span>{children}</span>
+      {children}
     </button>
   );
 };

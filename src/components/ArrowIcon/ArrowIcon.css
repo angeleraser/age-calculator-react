@@ -1,5 +1,8 @@
 .arrow-icon {
+  display: inline-block;
   font-size: 24px;
+  height: 1em;
+  width: 1em;
 }
 
 .arrow-icon svg {
