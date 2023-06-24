@@ -1,0 +1,19 @@
+.heading {
+  font-family: var(--font-poppins);
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--secondary);
+  font-style: italic;
+}
+
+.heading-value {
+  display: inline-block;
+  color: var(--primary);
+  margin-right: 8px;
+}
+
+@media screen and (min-width: 1024px) {
+  .heading {
+    font-size: 86px;
+  }
+}

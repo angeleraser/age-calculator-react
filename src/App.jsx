@@ -1,7 +1,8 @@
 import "./assets/css/index.css";
-import { ArrowIcon } from "./components/ArrowIcon";
+import { ArrowIcon } from "./components/ArrowIcon/ArrowIcon";
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
+import { Heading } from "./components/Heading/Heading";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       <Button color="primary" rounded>
         <ArrowIcon />
       </Button>
+      <Heading value="12" label="years" />
+      <Heading label="months" />
+      <Heading value="12" label="days" />
     </Card>
   );
 }

@@ -1,5 +1,12 @@
 .card {
+  width: 100%;
   background-color: var(--white);
-  padding: 54px;
+  padding: 22px;
   border-radius: 16px 16px 140px 16px;
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    padding: 54px;
+  }
 }
