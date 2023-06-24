@@ -1,0 +1,36 @@
+.age-form-fields,
+.age-form-submit-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.age-form-fields {
+  gap: 16px;
+}
+
+.age-form-submit-btn .button {
+  flex-shrink: 0;
+}
+
+.age-form-submit-btn::before {
+  display: inline-block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--lightgray);
+}
+
+.age-form .input-field {
+  max-width: 86px;
+}
+
+@media screen and (min-width: 1024px) {
+  .age-form {
+    gap: 32px;
+  }
+
+  .age-form .input-field {
+    max-width: 160px;
+  }
+}

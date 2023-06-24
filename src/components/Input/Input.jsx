@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./Input.css";
 import { classNames } from "../../utils/classNames";
 import React from "react";
@@ -15,24 +16,26 @@ export const Input = ({
   type = "text",
   required = false,
   onInvalid,
+  invalid = false,
 }) => {
   const [error, setShowError] = React.useState("");
 
   const handleOnChange = ({ target: { value } }) => {
     if (value.length - 1 === Number(maxLength)) return;
-
     onChange?.(value);
     handleValidity(value);
   };
 
   const handleValidity = (value) => {
     if (!value) return setShowError("This field is required");
-    if (validation?.(value)) return setShowError(errorMessage);
-
+    if (validation && !validation(value)) return setShowError(errorMessage);
     setShowError("");
   };
 
-  React.useEffect(() => onInvalid?.(error), [error, onInvalid]);
+  React.useEffect(() => onInvalid?.(error), [error]);
+  React.useEffect(() => {
+    value && setShowError(invalid ? errorMessage : "");
+  }, [invalid]);
 
   return (
     <label
@@ -53,6 +56,7 @@ export const Input = ({
         required={required}
         type={type}
         value={value}
+        onInvalid={() => handleValidity(value)}
       />
 
       <p className="input-field-error-msg">{error}</p>

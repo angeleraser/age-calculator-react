@@ -22,13 +22,14 @@
   font-family: var(--font-poppins);
   border: none;
   outline: 1px solid var(--lightgray);
-  padding: 16px;
+  padding: 12px;
   font-size: 16px;
   border-radius: 6px;
   margin: 10px 0;
   font-weight: 800;
   color: var(--secondary);
-  transition: outline .3s;
+  transition: outline 0.3s;
+  width: 100%;
 }
 
 .input-field-input::placeholder,
@@ -66,7 +67,7 @@
 
 @media screen and (min-width: 1024px) {
   .input-field-input {
-    padding: 22px;
+    padding: 16px;
     font-size: 24px;
   }
 }
