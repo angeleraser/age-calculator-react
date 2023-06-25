@@ -76,6 +76,7 @@ function getElapsedDaysSinceMonth(month, year) {
   for (let index = month; index <= 12; index++) {
     count += getMonthDays(year)[index];
   }
+
   return count;
 }
 
@@ -96,15 +97,15 @@ function getElapsedDaysSinceDate(day, month, year) {
 }
 
 function dateToYears(day, month, year) {
-  return toFractionDigits(getElapsedDaysSinceDate(day, month, year) / 365.2);
+  return toFractionDigits(getElapsedDaysSinceDate(day, month, year) / 365.25);
+}
+
+function monthsToDays(month) {
+  return toFractionDigits(month * 30.44);
 }
 
 function yearsToMonths(years) {
   return toFractionDigits(years * 12);
-}
-
-function monthsToDays(month) {
-  return toFractionDigits(month * 30.5);
 }
 
 function getFloatingPoint(num) {
@@ -112,7 +113,7 @@ function getFloatingPoint(num) {
 }
 
 function toFractionDigits(num) {
-  return Number(num.toFixed(3));
+  return Number(num.toFixed(4));
 }
 
 export {
