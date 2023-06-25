@@ -13,7 +13,6 @@
   position: relative;
   min-height: 54px;
   justify-content: center;
-  padding-right: 44px;
 }
 
 .age-form-submit-btn .button {
@@ -28,15 +27,7 @@
   background-color: var(--lightgray);
 }
 
-.age-form .input-field {
-  max-width: 25%;
-}
-
 @media screen and (min-width: 1024px) {
-  .age-form {
-    gap: 32px;
-  }
-
   .age-form-fields {
     gap: 32px;
   }
@@ -45,7 +36,8 @@
     max-width: 150px;
   }
 
-  .age-form-submit-btn {
+  .age-form-submit-btn,
+  .age-form-fields {
     padding-right: 0;
   }
 
