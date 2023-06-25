@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import "./Input.css";
-import { classNames } from "../../utils/classNames";
+import { classNames } from "../../utils/class-names";
 import React from "react";
 
 export const Input = ({

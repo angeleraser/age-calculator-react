@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "../Input/Input";
-import "./AgeForm.css";
+import "./DateForm.css";
 import { Button } from "../Button/Button";
 import { ArrowIcon } from "../ArrowIcon/ArrowIcon";
 import {
@@ -10,7 +10,7 @@ import {
   isValidYear,
 } from "../../utils/date-validators";
 
-export const AgeForm = ({ onSubmit }) => {
+export const DateForm = ({ onSubmit }) => {
   const [fieldsValue, setFieldsValue] = React.useState({
     day: "",
     month: "",
@@ -58,8 +58,8 @@ export const AgeForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="age-form">
-      <div className="age-form-fields">
+    <form onSubmit={handleSubmit} className="date-form">
+      <div className="date-form-fields">
         <Input
           required
           errorMessage="Must be a valid day"
@@ -116,7 +116,7 @@ export const AgeForm = ({ onSubmit }) => {
         />
       </div>
 
-      <div className="age-form-submit-btn">
+      <div className="date-form-submit-btn">
         <Button type="submit" rounded>
           <ArrowIcon />
         </Button>

@@ -1,14 +1,15 @@
 import "./assets/css/index.css";
 import { Card } from "./components/Card/Card";
-import { AgeForm } from "./components/AgeForm/AgeForm";
+import { DateForm } from "./components/DateForm/DateForm";
 import { Heading } from "./components/Heading/Heading";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   dateToYears,
   getFloatingPoint,
   monthsToDays,
   yearsToMonths,
 } from "./utils/date-validators";
+import { animateNumbers } from "./utils/animate-numbers";
 
 function getAccuratedAge(day, month, year) {
   const years = dateToYears(day, month, year);
@@ -24,25 +25,70 @@ function getAccuratedAge(day, month, year) {
 
 function App() {
   const [ageData, setAgeData] = useState({
-    day: null,
-    month: null,
-    year: null,
+    days: null,
+    months: null,
+    years: null,
   });
 
-  useEffect(() => {
-    if (ageData.day && ageData.month && ageData.year) {
-      console.log(getAccuratedAge(ageData.day, ageData.month, ageData.year));
-    }
-  }, [ageData]);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleDateSubmit = (payload) => {
+    if (isAnimating) return;
+
+    const { years, days, months } = getAccuratedAge(
+      payload.day,
+      payload.month,
+      payload.year
+    );
+
+    setIsAnimating(true);
+
+    animateNumbers({
+      value: years,
+      handler(value) {
+        setAgeData((curr) => ({ ...curr, years: value }));
+      },
+    });
+
+    animateNumbers({
+      value: months,
+      handler(value) {
+        setAgeData((curr) => ({ ...curr, months: value }));
+      },
+      animationDelay: 100,
+    });
+
+    animateNumbers({
+      value: days,
+      handler(value) {
+        setAgeData((curr) => ({ ...curr, days: value }));
+      },
+      clearFn() {
+        setIsAnimating(false);
+      },
+      animationDelay: 200,
+    });
+  };
 
   return (
     <Card maxWidth="840px">
-      <AgeForm onSubmit={(data) => setAgeData(data)} />
+      <DateForm onSubmit={handleDateSubmit} />
 
       <div className="headings-container">
-        <Heading label="years" />
-        <Heading label="months" />
-        <Heading value="" label="days" />
+        <Heading
+          value={ageData.years !== null ? ageData.years : ""}
+          label="years"
+        />
+
+        <Heading
+          value={ageData.months !== null ? ageData.months : ""}
+          label="months"
+        />
+
+        <Heading
+          value={ageData.days !== null ? ageData.days : ""}
+          label="days"
+        />
       </div>
     </Card>
   );

@@ -1,25 +1,25 @@
-.age-form-fields,
-.age-form-submit-btn {
+.date-form-fields,
+.date-form-submit-btn {
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.age-form-fields {
+.date-form-fields {
   gap: 16px;
 }
 
-.age-form-submit-btn {
+.date-form-submit-btn {
   position: relative;
   min-height: 54px;
   justify-content: center;
 }
 
-.age-form-submit-btn .button {
+.date-form-submit-btn .button {
   position: absolute;
 }
 
-.age-form-submit-btn::before {
+.date-form-submit-btn::before {
   display: inline-block;
   content: "";
   width: 100%;
@@ -28,20 +28,20 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .age-form-fields {
+  .date-form-fields {
     gap: 32px;
   }
 
-  .age-form .input-field {
+  .date-form .input-field {
     max-width: 150px;
   }
 
-  .age-form-submit-btn,
-  .age-form-fields {
+  .date-form-submit-btn,
+  .date-form-fields {
     padding-right: 0;
   }
 
-  .age-form-submit-btn .button {
+  .date-form-submit-btn .button {
     flex-shrink: 0;
     position: static;
   }
