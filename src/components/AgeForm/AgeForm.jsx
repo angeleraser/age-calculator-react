@@ -3,7 +3,12 @@ import { Input } from "../Input/Input";
 import "./AgeForm.css";
 import { Button } from "../Button/Button";
 import { ArrowIcon } from "../ArrowIcon/ArrowIcon";
-import { isValidDay, isValidMonth, isValidYear } from "../../utils/validators";
+import {
+  isFutureDate,
+  isValidDay,
+  isValidMonth,
+  isValidYear,
+} from "../../utils/date-validators";
 
 export const AgeForm = ({ onSubmit }) => {
   const [fieldsValue, setFieldsValue] = React.useState({
@@ -33,12 +38,22 @@ export const AgeForm = ({ onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (Object.values(fieldsError).some((err) => err)) return;
-
-    onSubmit?.({
+    const { year, month, day } = {
       year: Number(fieldsValue.year),
       month: Number(fieldsValue.month),
-      day: Number(fieldsValue.month),
+      day: Number(fieldsValue.day),
+    };
+
+    if (Object.values(fieldsError).some((err) => err)) return;
+
+    if (isFutureDate(day, month, year)) {
+      return alert("The date may not be in the future");
+    }
+
+    onSubmit?.({
+      year,
+      month,
+      day,
     });
   };
 
@@ -53,11 +68,19 @@ export const AgeForm = ({ onSubmit }) => {
           maxLength="2"
           onChange={handleFieldsValueChange("day")}
           invalid={
-            !isValidDay(Number(fieldsValue.day), Number(fieldsValue.month))
+            !isValidDay(
+              Number(fieldsValue.day),
+              Number(fieldsValue.month),
+              Number(fieldsValue.year)
+            )
           }
           placeholder="DD"
           validation={(day) => {
-            return isValidDay(Number(day), Number(fieldsValue.month));
+            return isValidDay(
+              Number(day),
+              Number(fieldsValue.month),
+              Number(fieldsValue.year)
+            );
           }}
           value={fieldsValue.day}
           onInvalid={handleFieldsError("day")}

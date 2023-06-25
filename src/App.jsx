@@ -2,14 +2,24 @@ import "./assets/css/index.css";
 import { Card } from "./components/Card/Card";
 import { AgeForm } from "./components/AgeForm/AgeForm";
 import { Heading } from "./components/Heading/Heading";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  dateToYears,
+  getFloatingPoint,
+  monthsToDays,
+  yearsToMonths,
+} from "./utils/date-validators";
 
-function getAgeYear(year = 0) {
-  return Math.abs(year - new Date().getFullYear());
-}
+function getAccuratedAge(day, month, year) {
+  const years = dateToYears(day, month, year);
+  const months = yearsToMonths(getFloatingPoint(years));
+  const days = monthsToDays(getFloatingPoint(months));
 
-function getAgeMonths(month) {
-  return Math.abs(new Date().getMonth() + 1 - month);
+  return {
+    years: Math.floor(years),
+    months: Math.floor(months),
+    days: Math.round(days),
+  };
 }
 
 function App() {
@@ -19,19 +29,19 @@ function App() {
     year: null,
   });
 
+  useEffect(() => {
+    if (ageData.day && ageData.month && ageData.year) {
+      console.log(getAccuratedAge(ageData.day, ageData.month, ageData.year));
+    }
+  }, [ageData]);
+
   return (
     <Card maxWidth="840px">
       <AgeForm onSubmit={(data) => setAgeData(data)} />
 
       <div className="headings-container">
-        <Heading
-          value={ageData.year !== null ? getAgeYear(ageData.year) : ""}
-          label="years"
-        />
-        <Heading
-          value={ageData.month !== null ? getAgeMonths(ageData.month) : ""}
-          label="months"
-        />
+        <Heading label="years" />
+        <Heading label="months" />
         <Heading value="" label="days" />
       </div>
     </Card>
