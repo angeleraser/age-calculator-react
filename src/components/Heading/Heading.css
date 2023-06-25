@@ -4,12 +4,13 @@
   font-weight: 800;
   color: var(--secondary);
   font-style: italic;
+  line-height: 1.1;
 }
 
 .heading-value {
   display: inline-block;
   color: var(--primary);
-  letter-spacing: 16px;
+  margin-right: 12px;
 }
 
 @media screen and (min-width: 1024px) {

@@ -3,7 +3,7 @@ import { Input } from "../Input/Input";
 import "./AgeForm.css";
 import { Button } from "../Button/Button";
 import { ArrowIcon } from "../ArrowIcon/ArrowIcon";
-import { isValidDay, isValidMonth, validateYear } from "../../utils/validators";
+import { isValidDay, isValidMonth, isValidYear } from "../../utils/validators";
 
 export const AgeForm = ({ onSubmit }) => {
   const [fieldsValue, setFieldsValue] = React.useState({
@@ -88,7 +88,7 @@ export const AgeForm = ({ onSubmit }) => {
           placeholder="YYYY"
           value={fieldsValue.year}
           onInvalid={handleFieldsError("year")}
-          validation={(year) => validateYear(Number(year))}
+          validation={(year) => isValidYear(Number(year))}
           type="number"
         />
       </div>
