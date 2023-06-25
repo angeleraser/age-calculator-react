@@ -9,8 +9,15 @@
   gap: 16px;
 }
 
+.age-form-submit-btn {
+  position: relative;
+  min-height: 54px;
+  justify-content: center;
+  padding-right: 44px;
+}
+
 .age-form-submit-btn .button {
-  flex-shrink: 0;
+  position: absolute;
 }
 
 .age-form-submit-btn::before {
@@ -22,7 +29,7 @@
 }
 
 .age-form .input-field {
-  max-width: 86px;
+  max-width: 25%;
 }
 
 @media screen and (min-width: 1024px) {
@@ -32,5 +39,14 @@
 
   .age-form .input-field {
     max-width: 160px;
+  }
+
+  .age-form-submit-btn {
+    padding-right: 0;
+  }
+
+  .age-form-submit-btn .button {
+    flex-shrink: 0;
+    position: static;
   }
 }
