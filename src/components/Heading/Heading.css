@@ -9,11 +9,11 @@
 .heading-value {
   display: inline-block;
   color: var(--primary);
-  margin-right: 8px;
+  letter-spacing: 16px;
 }
 
 @media screen and (min-width: 1024px) {
   .heading {
-    font-size: 86px;
+    font-size: 92px;
   }
 }

@@ -17,3 +17,10 @@ html {
   padding: 18px;
   font-family: var(--font-poppins);
 }
+
+.headings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 24px 0;
+}

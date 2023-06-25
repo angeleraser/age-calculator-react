@@ -37,8 +37,12 @@
     gap: 32px;
   }
 
+  .age-form-fields {
+    gap: 32px;
+  }
+
   .age-form .input-field {
-    max-width: 160px;
+    max-width: 150px;
   }
 
   .age-form-submit-btn {
