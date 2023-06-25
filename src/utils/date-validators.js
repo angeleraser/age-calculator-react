@@ -100,11 +100,11 @@ function dateToYears(day, month, year) {
 }
 
 function yearsToMonths(years) {
-  return toFractionDigits((years * 12) / 1);
+  return toFractionDigits(years * 12);
 }
 
 function monthsToDays(month) {
-  return toFractionDigits(month * 30);
+  return toFractionDigits(month * 30.5);
 }
 
 function getFloatingPoint(num) {
@@ -127,5 +127,5 @@ export {
   isCurrentYear,
   isValidDate,
   getYearTotalDays,
-  isFutureDate
+  isFutureDate,
 };
