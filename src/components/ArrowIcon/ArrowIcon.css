@@ -9,9 +9,3 @@
   width: 1em;
   height: 1em;
 }
-
-@media screen and (min-width: 1024px) {
-  .arrow-icon {
-    font-size: 46px;
-  }
-}

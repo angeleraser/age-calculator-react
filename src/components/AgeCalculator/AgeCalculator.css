@@ -1,0 +1,17 @@
+.age-calculator-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6px 0;
+  gap: 6px;
+}
+
+.age-calculator-result .heading:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+@media screen and (min-width: 1024px) {
+  .age-calculator-result {
+    align-items: flex-start;
+  }
+}

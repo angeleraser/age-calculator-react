@@ -1,20 +1,28 @@
-.heading {
+.result {
   font-family: var(--font-poppins);
-  font-size: 48px;
+  font-size: clamp(16px, 10vw, 48px);
   font-weight: 800;
   color: var(--secondary);
   font-style: italic;
   line-height: 1.1;
 }
 
-.heading-value {
+.result-sublabel {
+  font-size: 0.4em;
+  color: var(--primary);
+}
+
+.result-value {
   display: inline-block;
   color: var(--primary);
-  margin-right: 12px;
+}
+
+.result-label {
+  margin: 0 12px;
 }
 
 @media screen and (min-width: 1024px) {
-  .heading {
-    font-size: 92px;
+  .result {
+    font-size: clamp(16px, 10vw, 92px);
   }
 }

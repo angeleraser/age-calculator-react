@@ -7,6 +7,7 @@
 
 .date-form-fields {
   gap: 16px;
+  margin-bottom: 6px;
 }
 
 .date-form-submit-btn {
@@ -44,5 +45,14 @@
   .date-form-submit-btn .button {
     flex-shrink: 0;
     position: static;
+  }
+
+  .date-form .button-rounded {
+    border-radius: 50%;
+    padding: 24px;
+  }
+
+  .date-form .arrow-icon {
+    font-size: 46px;
   }
 }

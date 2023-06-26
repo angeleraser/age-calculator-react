@@ -32,10 +32,3 @@
 .button:active {
   scale: 0.97;
 }
-
-@media screen and (min-width: 1024px) {
-  .button-rounded {
-    border-radius: 50%;
-    padding: 24px;
-  }
-}
