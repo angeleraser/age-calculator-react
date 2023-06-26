@@ -21,7 +21,12 @@ export const Input = ({
   const [error, setShowError] = React.useState("");
 
   const handleOnChange = ({ target: { value } }) => {
+    if (value.length > Number(maxLength)) {
+      return onChange?.(value.slice(0, Number(maxLength)));
+    }
+
     if (value.length - 1 === Number(maxLength)) return;
+
     onChange?.(value);
     handleValidity(value);
   };
