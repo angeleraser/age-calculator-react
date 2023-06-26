@@ -1,12 +1,12 @@
-const CURRENT_YEAR = new Date().getFullYear();
-const CURRENT_MONTH = new Date().getMonth();
+const getCurrentYear = () => new Date().getFullYear();
+const getCurrentMonth = () => new Date().getMonth();
 
 function isCurrentYear(year) {
-  return year === CURRENT_YEAR;
+  return year === getCurrentYear();
 }
 
 function isCurrentMonth(month) {
-  return month === CURRENT_MONTH;
+  return month === getCurrentMonth();
 }
 
 function getYearTotalDays(year) {
@@ -50,7 +50,7 @@ function isValidMonth(month) {
 }
 
 function isValidYear(year) {
-  return year >= 0 && year <= CURRENT_YEAR;
+  return year >= 0 && year <= getCurrentYear();
 }
 
 function isLeapYear(year) {
@@ -60,11 +60,11 @@ function isLeapYear(year) {
 function getCurrentYearElapsedDays() {
   let count = 0;
 
-  for (let index = 0; index <= CURRENT_MONTH; index++) {
+  for (let index = 0; index <= getCurrentMonth(); index++) {
     count +=
-      index === CURRENT_MONTH
+      index === getCurrentMonth()
         ? new Date().getDate()
-        : getMonthDays(CURRENT_YEAR)[index + 1];
+        : getMonthDays(getCurrentYear())[index + 1];
   }
 
   return count;
@@ -89,7 +89,7 @@ function getElapsedDaysSinceDate(day, month, year) {
 
   let count = 0;
 
-  for (let y = year; y < CURRENT_YEAR; y++) {
+  for (let y = year; y < getCurrentYear(); y++) {
     count += getElapsedDaysSinceMonth(count === 0 ? month : 1, y);
   }
 
