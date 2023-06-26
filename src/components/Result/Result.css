@@ -18,11 +18,15 @@
 }
 
 .result-label {
-  margin: 0 12px;
+  margin: 0 6px;
 }
 
 @media screen and (min-width: 1024px) {
   .result {
     font-size: clamp(16px, 10vw, 92px);
+  }
+
+  .result-label {
+    margin: 0 12px;
   }
 }

@@ -7,12 +7,11 @@ html {
 }
 
 #root {
-  min-height: 100vh;
+  min-height: 95vh;
   min-width: 375px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   width: 100%;
   padding: 18px;
   font-family: var(--font-poppins);
