@@ -47,7 +47,7 @@ export const Input = ({
       {label && <h3 className="input-field-label">{label}</h3>}
 
       <input
-        className="input-field-input"
+        className="input-field-input notranslate"
         id={id}
         name={name}
         onBlur={() => handleValidity(value)}
